@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>U.S. Airline Cancellation Analysis 2015 - 2018</title>
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <!-- Navigation Section -->
+
+  <div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" style="background-color: #0BADA6;" href="index.html">AIRPORT CANCELLATIONS</a>
+      <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse"
+        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </ul>
+  </div>
+  </nav>
+  </div>
+  <!-- Content Section -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-12">
+        <!-- Left box  -->
+        <div class="bar">
+          <h3 class="title">U.S. Airline Cancellation Analysis 2015 ~ 2018</h3>
+          <hr>
+          <div class="col-14">
+              <img class="panel" src="/static/images/cancelledflights.png" alt="Airport Cancellation Image">
+              <div class="panel" style="padding-bottom: 30px;"></div>
+            </a>
+          </div>
+          <p>Have you ever gotten your wonderful trip plan ruined due to an airline cancellation?
+            For example, how many people suffered from the snow storm that hit major airports in 2018?
+            Which caused cancellation of more than 550 flights.
+          </p>
+
+          <p>There are many reasons why flights get cancelled; bad weather as we mentioned, security, lack of
+            passengers, lack of aircraft, crew out of time, lack of crew or pilot, mechanical issues and more. All of
+            these many reasons are unpredictable and the airline has no choice but to cancel the flight and disrupt trips.
+          </p>
+
+
+          <h3 class="title">Assumption and prediction</h3>
+          <hr>
+          <div class="col-14">
+          </div>
+          <p>Our assumption is that every month and year there are certain days that airline gets cancelled more often. During the winter months from December to March. 
+          </p>
+
+          <h3 class="title">Mission</h3>
+          <hr>
+          <div class="col-14">
+          </div>
+          <p>Our mission is to use the given data to visualize the data and find a trend or pattern of cancellation of the air flights over the years and months.
+
+            We hope to use the pattern to help airlines and travel companies to account our data to their risk
+            management team and make the best decisions for customers.
+          </p>
+
+          <div class="title" style="padding-bottom: 5px;"></div>
+
+            <img class="panel" src="/static/images/airportimage1.png" alt="Airport Delay Image">
+            <div class="panel" style="padding-bottom: 30px;"></div>
+
+          <h3 class="title">Team</h3>
+          <hr>
+          <div class="col-14">
+          </div>
+          <p>Abel Renteria Jorge Sanchez Kwang Min Ko
+          </p>
+          <h3 class="title">Data Sets</h3>
+          <hr>
+          <div class="col-14">
+          </div>
+          <p>Toolkits: This project heavily relies on pandas and Numpy for data wrangling, analysis, and visualization. 
+            Our database is based from SQL.
+            The primary plotting library we will explore is Plotly;
+          </p>
+
+          <p>
+            1. International IATA Airports Data: Airport Data from Rapid API. The dataset consists of reliable airports list and details, with IATA codes.
+            The Data is accessed through an API call.
+          </p>
+          <p>
+            2. Airline Data: Airline Data from the Kaggle public data website. The dataset contains a database of over
+            5000 airlines. The data presents airline name, IATA id, callsign, and country.
+          </p>
+          <p>
+            3.U.S Airline Delay and Cancellation Data from 2009 to 2018: Airline Delay Data from the Kaggle public
+            data. The dataset is derived from the Department of Transportaions flight info of US domestic flights.
+            Updated yearly, showing data for the entire years of 2009 to 2018.            
+          </p>
+
+          <div class="bar">
+            <h3 class="title">Data Visualization</h3>
+            <hr>
+            <p>This interactive graph of the USA accumlates cancellations in each state. We used API's and datasets to put this data together.
+              After assembling the dataset, we used Matplotlib to plot various aspects of the US Airports vs. latitude.
+              Factors in this data set include geographical locations of airports and the number of delays per airport.
+              You will be able to interact with the data set by indicating which year. We used plotly to display this
+              data</p>
+            <div id="bar"></div>
+            <select id="selDataset" onchange="getData(this.value)">
+              <option value="FLIGHT_DATE">Monthly</option>
+              <option value="FLIGHT_DATE_Y_2015">2015</option>
+              <option value="FLIGHT_DATE_Y_2016">2016</option>
+              <option value="FLIGHT_DATE_Y_2017">2017</option>
+              <option value="FLIGHT_DATE_Y_2018">2018</option>
+            </select>
+
+            <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+          </div>
+          <p> Click on drop down menu to change the years </p>
+        </div>
+ 
+        <h3 class="title">Data Analysis</h3>
+        <hr>
+        <div class="col-14">
+        </div>
+        <p>-Which month had the most cancellations in 2015, 2016, 2017, 2018?
+          - Where were most cancellations? 
+        </p>
+
+    <h3 class="title">Data Analysis 2</h3>
+    <hr>
+    <div class="col-14">
+    </div>
+    <p>-Which month had the most cancellations in 2015, 2016, 2017, 2018?
+      - Where were most cancellations? 
+    </p>
+    <h3 class="title">Conclusions</h3>
+    <hr>
+    <div class="col-14">
+    </div>
+    <p>-Which month had the most cancellations in 2015, 2016, 2017, 2018?
+      - Wich airport and state had the most cancellations? 
+    </p>
+      
+
+
+
+
+
+              <div class="row" style="padding-bottom: 30px;">
+                <div class="col-14">
+                  <p>This interactive map of the USA accumlates delays in each state. We used API's
+                    after assembling the dataset, we used Plotly to plot various aspects of the US Airports vs.
+                    latitude.
+                    Factors in this data set include geographical locations of airports from each state. </p>
+                  </a>
+                </div>
+                <div class="col-6">
+                    <img class="panel" src="Resources/assets/images/Fig4.png" alt="Wind Speed Graph">
+                  </a>
+                </div>
+
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer">Copyright &copy; Abel, Kwang and Jorge | Project #3</div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>
