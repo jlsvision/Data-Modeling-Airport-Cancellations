@@ -1,7 +1,4 @@
-# The Dilemma of Airlinw flight cancellations 
+# The Dilemma of Airline flight cancellations 
 
-Jorgee Sanchez (Table)
+By: Jorge Sanchez, Abel Renteria, Kwang Min Ko 
 
-Abel Renteria (Table)
-
-Kwang Min Ko (Story Teller, Scrapper) 
