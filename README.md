@@ -9,6 +9,6 @@ The analysis of this project was to find the airline companies that had the most
 
 # Dataset: API's and Kaggle of all U.S Flight Cancellations from 2015-2018. 
 
-<img src="images/cancelledflights.png" width="600">  
+<img src="static/images/cancelledflights.png" width="600">  
 
 This data set was created with the conjunction of API data from IATA Airports. We merged two data sets and were able to decode the airport using the API data. At the end of this data, we had a total data set of about million rows and columns. This data was very large because it over a 4 year time span. This meant we had to do a lot of data clean, normalization and cereating a database for such a large dataset.
